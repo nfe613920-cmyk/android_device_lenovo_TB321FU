@@ -39,6 +39,10 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+    # Mount persist
+    mkdir /mnt/vendor/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist ro
+
 on boot
     start health-hal-2-1
 
