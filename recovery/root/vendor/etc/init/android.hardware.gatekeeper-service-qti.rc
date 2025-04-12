@@ -1,0 +1,13 @@
+service vendor.gatekeeper_default /system/bin/android.hardware.gatekeeper-service-qti
+    user root
+    group root
+    # /vendor/lib64/hw is required.
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:vendor.gatekeeper.is_security_level_spu=0
+    enable vendor.gatekeeper_default
+
+on property:hwservicemanager.ready=true && property:vendor.sys.listeners.registered=true
+    start vendor.gatekeeper_default
