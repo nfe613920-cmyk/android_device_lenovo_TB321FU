@@ -28,6 +28,7 @@
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
+    loglevel 7
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -39,11 +40,23 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+on property:twrp.modules.loaded=true
     # Mount persist
     mkdir /mnt/vendor/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist ro
 
-on boot
+    # Disable selinux for firmware loading
+    write /sys/fs/selinux/enforce 0
+    # Load adsp
+    start load-adsp
+    wait_for_prop vendor.adsp_loaded 1
     start health-hal-2-1
+
+service load-adsp /system/bin/load-adsp.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
 
 import /init.recovery.qcom_decrypt.rc

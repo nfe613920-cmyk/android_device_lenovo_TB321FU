@@ -100,8 +100,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
-AB_OTA_UPDATER := false
-
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := pineapple
@@ -173,6 +171,8 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
+TW_LOAD_VENDOR_MODULES := "qcom_pil_info.ko qmi_helpers.ko qcom_smd.ko qcom_glink.ko qcom_glink_smem.ko rproc_qcom_common.ko qcom_sysmon.ko qcom_q6v5.ko qcom_ramdump.ko qcom_q6v5_pas.ko snd_event_dlkm.ko pdr_interface.ko q6_pdr_dlkm.ko q6_notifier_dlkm.ko gpr_dlkm.ko spf_core_dlkm.ko adsp_loader_dlkm.ko"
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Statusbar icons flags
 TW_STATUS_ICONS_ALIGN := center

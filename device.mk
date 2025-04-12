@@ -37,3 +37,29 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
+
+# Virtual A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# A/B updater updatable partitions list. Keep in sync with the partition list
+# with "_a" and "_b" variants in the device. Note that the vendor can add more
+# more partitions to this list for the bootloader and radio.
+AB_OTA_UPDATER := true
+
+# Main Logical Partitions
+AB_OTA_PARTITIONS := \
+    odm \
+    product \
+    system \
+    system_ext \
+    vendor
+
+AB_OTA_PARTITIONS += \
+    boot \
+    vendor_boot \
+    recovery \
+    vendor_dlkm \
+    dtbo \
+    vbmeta \
+    init_boot \
+    system_dlkm
