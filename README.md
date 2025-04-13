@@ -3,7 +3,7 @@
 TWRP build for Legion Tablet Y700 (2025).
 
 ## Flash instructions
-1. Download recovery image from release page.
+1. Download recovery image from [release](https://github.com/polygraphene/android_device_lenovo_TB321FU/releases).
 2. Unlock bootloader
 3. Flash recovery
    - Launch bootloader then run the following command.
@@ -14,35 +14,35 @@ TWRP build for Legion Tablet Y700 (2025).
 ## Supported features
 
 Blocking checks
-- [v] Correct screen/recovery size
-- [v] Working Touch, screen
-- [v] Backup to internal/microSD
-- [v] Restore from internal/microSD
-- [v] reboot to system
-- [v] ADB
+- [x] Correct screen/recovery size
+- [x] Working Touch, screen
+- [x] Backup to internal/microSD
+- [x] Restore from internal/microSD
+- [x] reboot to system
+- [x] ADB
 
 Medium checks
-- [ ] update.zip sideload
-- [v] UI colors (red/blue inversions)
-- [v] Screen goes off and on
-- [v] F2FS/EXT4 Support, exFAT/NTFS where supported
-- [v] all important partitions listed in mount/backup lists
+- [x] update.zip sideload
+- [x] UI colors (red/blue inversions)
+- [x] Screen goes off and on
+- [x] F2FS/EXT4 Support, exFAT/NTFS where supported
+- [x] all important partitions listed in mount/backup lists
 - [ ] backup/restore to/from external (USB-OTG) storage (not supported by the device)
 - [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
-- [v] decrypt /data
-- [v] Correct date
+- [x] decrypt /data
+- [x] Correct date
 
 Minor checks
-- [v] MTP export
-- [v] reboot to bootloader
-- [v] reboot to recovery
+- [x] MTP export
+- [x] reboot to bootloader
+- [x] reboot to recovery
 - [ ] poweroff
-- [v] battery level
-- [v] temperature
+- [x] battery level
+- [x] temperature
 - [ ] encrypted backups
 - [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks (not supported by the device)
 - [ ] USB mass storage export
-- [v] set brightness
+- [x] set brightness
 - [ ] vibrate
 - [ ] screenshot
 - [ ] partition SD card
@@ -50,12 +50,13 @@ Minor checks
 ## Note
 1. Based on TWRP 3.7.1
 2. Includes following patches
-    a. Add gatekeeper and boot AIDL support for /data decrytion.
-    b. Fix for a graphical glitch
-        - https://github.com/polygraphene/android\_bootable\_recovery/commit/4e4dd385974e275fac5f894bf7ad00fb17004e62
-    c. Fix for landscape theme
-        - https://github.com/polygraphene/android\_device\_lenovo\_TB320FC/pull/2#issuecomment-2525420584
-    d. Support for work profile decryption
+   - Add gatekeeper and boot AIDL support for /data decrytion.
+        - https://github.com/polygraphene/android_hardware_interfaces/tree/android-12.1-TB321FU
+   - Fix for a graphical glitch
+        - https://github.com/polygraphene/android_bootable_recovery/commit/4e4dd385974e275fac5f894bf7ad00fb17004e62
+   - Fix for landscape theme
+        - https://github.com/polygraphene/android_device_lenovo_TB320FC/pull/2#issuecomment-2525420584
+   - Support for work profile decryption
         - https://github.com/TeamWin/Team-Win-Recovery-Project/issues/1256#issuecomment-2414079092
 
 ## Device specifications
