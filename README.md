@@ -2,6 +2,8 @@
 
 TWRP build for Legion Tablet Y700 (2025).
 
+See https://github.com/polygraphene/android_device_lenovo_TB320FC for Y700 2023.
+
 ## Flash instructions
 1. Download recovery image from [release](https://github.com/polygraphene/android_device_lenovo_TB321FU/releases).
 2. Unlock bootloader
