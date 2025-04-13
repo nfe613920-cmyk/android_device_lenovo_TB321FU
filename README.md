@@ -1,6 +1,6 @@
 # TWRP device tree for Lenovo Legion Y700 (2025) (TB321FU)
 
-8.8 inch a high-end tablet with snapdragon 8 gen 3.
+TWRP build for Legion Tablet Y700 (2025).
 
 ## Flash instructions
 1. Download recovery image from release page.
