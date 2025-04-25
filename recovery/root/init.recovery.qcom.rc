@@ -52,6 +52,8 @@ on property:twrp.modules.loaded=true
     wait_for_prop vendor.adsp_loaded 1
     start health-hal-2-1
 
+    start qseecomd
+
 service load-adsp /system/bin/load-adsp.sh
     user root
     group root
