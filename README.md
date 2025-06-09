@@ -85,6 +85,7 @@ repo sync -j 20 --force-sync
 (cd frameworks/native; git fetch https://github.com/polygraphene/android_frameworks_native android-12.1-TB321FU && git checkout FETCH_HEAD)
 (cd hardware/interfaces; git fetch https://github.com/polygraphene/android_hardware_interfaces android-12.1-TB321FU && git checkout FETCH_HEAD)
 (cd system/core; git fetch https://github.com/polygraphene/android_system_core android-12.1-TB321FU && git checkout FETCH_HEAD)
+(cd system/extras; git fetch https://github.com/polygraphene/android_system_extras android-12.1-TB321FU && git checkout FETCH_HEAD)
 (cd system/tools/aidl; git fetch https://github.com/polygraphene/android_system_tools_aidl android-12.1-TB321FU && git checkout FETCH_HEAD)
 (cd system/vold; git fetch https://github.com/polygraphene/android_system_vold android-12.1-TB321FU && git checkout FETCH_HEAD)
 
