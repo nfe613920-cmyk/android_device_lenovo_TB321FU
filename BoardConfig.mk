@@ -137,17 +137,19 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
 
-# PRODUCT_COPY_FILES directives.
+# TWRP specific build flags
 ifeq ($(USE_LANDSCAPE),true)
-    TW_ROTATION := 0
     TW_THEME := landscape_hdpi
-    RECOVERY_TOUCHSCREEN_SWAP_XY := false
-    RECOVERY_TOUCHSCREEN_FLIP_Y := false
-    
-else
-    TW_ROTATION := 90
-    TW_THEME := portrait_hdpi
+    TW_ROTATION := 0
     RECOVERY_TOUCHSCREEN_SWAP_XY := true
+    RECOVERY_TOUCHSCREEN_FLIP_X := false
+    RECOVERY_TOUCHSCREEN_FLIP_Y := true
+
+else
+    TW_THEME := portrait_hdpi
+    TW_ROTATION := 90
+    RECOVERY_TOUCHSCREEN_SWAP_XY := false
+    RECOVERY_TOUCHSCREEN_FLIP_X := true
     RECOVERY_TOUCHSCREEN_FLIP_Y := true
 endif
 #TW_DEVICE_VERSION := 0_Archer
