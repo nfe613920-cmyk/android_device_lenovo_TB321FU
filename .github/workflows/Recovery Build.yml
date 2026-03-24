@@ -11,10 +11,10 @@ env:
   MANIFEST_BRANCH: twrp-12.1
   DEVICE_TREE_URL: https://github.com/polygraphene/android_device_lenovo_TB321FU
   DEVICE_TREE_BRANCH: android-12.1
-  DEVICE_PATH: device/lenovo/TB321FU
+  DEVICE_PATH: device/lenovo/TB520FU
   DEVICE_NAME: TB321FU
-  DEVICE_PRODUCT_NAME: Lenovo Y700 2025
-  MAKEFILE_NAME: twrp_TB321FU
+  DEVICE_PRODUCT_NAME: Lenovo Yoga Pad Pro 12.7
+  MAKEFILE_NAME: twrp_TB520FU
   BUILD_TARGET: recovery
 
 jobs:
